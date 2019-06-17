@@ -1,0 +1,9 @@
+<h2>{{characterSelected}}</h2>
+
+<ul (click)="onClick($event)">
+  <li *ngFor="let c of characters" class="character">
+    {{c.name}}
+  </li>
+</ul>
+
+<star-wars-workspace-character-detail></star-wars-workspace-character-detail>
