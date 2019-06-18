@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Character} from '../character';
 
 @Component({
@@ -7,10 +7,7 @@ import {Character} from '../character';
   styleUrls: ['./character-detail.component.scss']
 })
 export class CharacterDetailComponent implements OnInit {
-  character: Character = {
-    name: 'Luke Skywalker',
-    url: 'https://swapi.co/api/people/1/'
-  };
+  @Input() character: Character
 
   constructor() { }
 

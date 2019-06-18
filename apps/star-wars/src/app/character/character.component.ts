@@ -1,10 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import data from '../../assets/characters.json';
-
-interface Character {
-  name: string;
-  url: string;
-}
+import { Character } from '../character';
 
 @Component({
   selector: 'star-wars-workspace-character',
@@ -13,15 +9,14 @@ interface Character {
 })
 export class CharacterComponent implements OnInit {
   characters: Character[] = data.characters;
-  characterSelected = 'Click any of the characters below';
+  characterSelected:Character;
 
-  onClick(e) {
-    this.characterSelected = `You\'ve chosen ${e.target.innerHTML}`;
+  onSelect(character: Character):void {
+    this.characterSelected = character;
   }
   constructor() { }
 
   ngOnInit() {
-    console.log(this.characters);
   }
 
 }
