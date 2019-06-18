@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { CharacterComponent } from './character/character.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent],
+  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent, MessagesComponent],
   imports: [
     BrowserModule,
     FormsModule,
