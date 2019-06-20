@@ -8,13 +8,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { CharacterComponent } from './character/character.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/characters', pathMatch: 'full' },
-  { path: 'characters', component: CharacterComponent }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent },
+  { path: 'characters', component: CharacterComponent },
+  { path: 'detail/:name', component: CharacterDetailComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent, MessagesComponent],
+  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent, MessagesComponent, HomeComponent],
   imports: [
     BrowserModule,
     FormsModule,

@@ -1,7 +1,10 @@
-<h1>{{title}}</h1>
+<a class="logo" routerLink="/home">
+  <h1>{{title}}</h1>
+</a>
 
 <nav>
-  <a routerLink="/characters">Characters</a>
+  <a class="nav-link" routerLink="/home">Home</a>
+  <a class="nav-link" routerLink="/characters">Characters</a>
 </nav>
 
 <router-outlet></router-outlet>

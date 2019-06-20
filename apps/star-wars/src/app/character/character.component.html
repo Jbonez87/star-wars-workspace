@@ -1,9 +1,23 @@
 <h2>Choose your character</h2>
 
-<ul>
+<!-- <ul>
   <li *ngFor="let c of characters" class="character" [class.selected]="c === characterSelected" (click)="onSelect(c)">
     {{c.name}}
   </li>
+</ul> -->
+
+<!-- <a *ngFor="let c of characters" class="col-1-4" routerLink="/detail/{{c.name}}">
+  <div class="module character">
+    <h4>{{c.name}}</h4>
+  </div>
+</a> -->
+
+<ul>
+  <li *ngFor="let c of characters" class="character">
+     <a routerLink="/detail/{{c.name}}">
+        {{c.name}}
+     </a>
+  </li>
 </ul>
 
-<star-wars-workspace-character-detail [character]="characterSelected"></star-wars-workspace-character-detail>
+<!-- <star-wars-workspace-character-detail [character]="characterSelected"></star-wars-workspace-character-detail> -->

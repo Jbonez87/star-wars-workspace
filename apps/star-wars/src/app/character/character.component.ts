@@ -10,7 +10,7 @@ import { Character } from '../character';
 })
 export class CharacterComponent implements OnInit {
   characters: Character[];
-  characterSelected:Character;
+  // characterSelected:Character;
 
   constructor(private characterService: CharacterService) { }
 
@@ -19,9 +19,9 @@ export class CharacterComponent implements OnInit {
     .subscribe(characters => this.characters = characters);
   }
 
-  onSelect(character: Character):void {
-    this.characterSelected = character;
-  }
+  // onSelect(character: Character):void {
+  //   this.characterSelected = character;
+  // }
 
   ngOnInit() {
     this.getCharacters();

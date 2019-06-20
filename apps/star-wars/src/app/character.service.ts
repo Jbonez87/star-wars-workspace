@@ -16,4 +16,9 @@ export class CharacterService {
     this.messageService.add('CharacterService: fetched characters');
     return of(data.characters);
   }
+
+  getCharacter(name: string): Observable<Character> {
+    this.messageService.add(`CharacterService: fetched character name=${name}`);
+    return of(data.characters.find(character => character.name === name));
+  }
 }
