@@ -26,25 +26,27 @@ export class CharacterDetailComponent implements OnInit {
 
   ngOnInit() {
     this.getCharacter();
-    this.getMovies(this.character.url);
   }
 
   getCharacter():void {
     const name = this.route.snapshot.paramMap.get('name');
     this.characterService.getCharacter(name)
-      .subscribe(character => this.character = character);
+      .subscribe(character => {
+        this.character = character;
+        this.getMovies(this.character.url);
+      });
   }
 
   getMovies(url: string) {
     this.moviesService.getMovies(url)
-    .subscribe(charData => {
+    .subscribe((charData: any) => {
       this.movieUrls = charData.films;
-// tslint:disable-next-line: no-shadowed-variable
-      for(const url of this.movieUrls) {
+      // tslint:disable-next-line: no-shadowed-variable
+      for (const url of this.movieUrls) {
         this.moviesService.getMovies(url)
-        .subscribe(movie => {
-          this.movies.push(movie);
-        })
+          .subscribe(movie => {
+            this.movies.push(movie);
+          })
       }
     });
   }
