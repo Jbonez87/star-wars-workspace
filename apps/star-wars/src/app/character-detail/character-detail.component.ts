@@ -5,7 +5,6 @@ import { Location } from '@angular/common';
 import { CharacterService } from '../character.service';
 import { MoviesService } from '../movies.service';
 import { Character } from '../character';
-import { Movie } from '../movie';
 
 @Component({
   selector: 'star-wars-workspace-character-detail',
@@ -15,7 +14,7 @@ import { Movie } from '../movie';
 export class CharacterDetailComponent implements OnInit {
   @Input() character: Character;
   url: string;
-  movieList: [];
+  movieUrls: [];
   movies = [];
 
   constructor(
@@ -39,15 +38,26 @@ export class CharacterDetailComponent implements OnInit {
   getMovies(url: string) {
     this.moviesService.getMovies(url)
     .subscribe(charData => {
-      this.movieList = charData.films;
+      this.movieUrls = charData.films;
 // tslint:disable-next-line: no-shadowed-variable
-      for(const url of this.movieList) {
+      for(const url of this.movieUrls) {
         this.moviesService.getMovies(url)
         .subscribe(movie => {
           this.movies.push(movie);
         })
       }
     });
+  }
+
+  formatMovieDate(date: string) {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    };
+    const formattedDate = new Date(date).toLocaleDateString('en-us', options);
+    return formattedDate;
   }
 
   goBack(): void {

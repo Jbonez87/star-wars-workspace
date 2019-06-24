@@ -2,9 +2,13 @@
 
   <h2>{{character.name | uppercase}} Details</h2>
   <div><span>name: </span>{{character.name}}</div>
-  <div>
-
+  <div *ngIf="movies.length > 0">
+    <div *ngFor="let movie of movies">
+      <h2>{{movie.title}}</h2>
+      <p>Released {{formatMovieDate(movie.release_date)}}</p>
+    </div>
   </div>
+  
 
 </div>
 <button (click)="goBack()">go back</button>
