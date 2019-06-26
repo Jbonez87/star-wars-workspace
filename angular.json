@@ -26,7 +26,7 @@
               "apps/star-wars/src/favicon.ico",
               "apps/star-wars/src/assets"
             ],
-            "styles": ["apps/star-wars/src/styles.scss"],
+            "styles": ["node_modules/bootstrap/dist/css/bootstrap.min.css", "apps/star-wars/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
