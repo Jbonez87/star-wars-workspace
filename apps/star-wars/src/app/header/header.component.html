@@ -1,6 +1,6 @@
-<!-- <nav class="navbar navbar-dark bg-dark mb-5">
+<nav class="navbar navbar-dark bg-dark mb-5">
   <a class="navbar-brand" routerLink="/home">
-    <h1>{{title}}</h1>
+    <h1 *ngIf="title">{{title}}</h1>
   </a>
   <div class="navbar-expand mr-auto">
     <div class="navbar-nav">
@@ -18,7 +18,4 @@
       </a>
     </div>
   </div>
-</nav> -->
-<star-wars-workspace-header [title]="title"></star-wars-workspace-header>
-<router-outlet></router-outlet>
-<star-wars-workspace-messages></star-wars-workspace-messages>
+</nav>

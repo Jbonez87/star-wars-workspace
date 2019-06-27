@@ -12,6 +12,7 @@ import { CharacterComponent } from './character/character.component';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'detail/:name', component: CharacterDetailComponent },
 ];
 @NgModule({
-  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent, MessagesComponent, HomeComponent],
+  declarations: [AppComponent, CharacterComponent, CharacterDetailComponent, MessagesComponent, HomeComponent, HeaderComponent],
   imports: [
     BrowserModule,
     FormsModule,
