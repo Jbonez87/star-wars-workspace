@@ -5,6 +5,7 @@ import { Location } from '@angular/common';
 import { CharacterService } from '../character.service';
 import { MoviesService } from '../movies.service';
 import { Character } from '../character';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'star-wars-workspace-character-detail',
@@ -21,7 +22,8 @@ export class CharacterDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private characterService: CharacterService,
     private moviesService: MoviesService,
-    private location: Location
+    private location: Location,
+    private messageService: MessageService
   ) { }
 
   ngOnInit() {
@@ -63,6 +65,7 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   goBack(): void {
+    this.messageService.clear();
     this.location.back();
   }
 

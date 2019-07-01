@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CharacterService } from '../character.service';
-// import data from '../../assets/characters.json';
 import { Character } from '../character';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'star-wars-workspace-character',
@@ -10,18 +10,20 @@ import { Character } from '../character';
 })
 export class CharacterComponent implements OnInit {
   characters: Character[];
-  // characterSelected:Character;
 
-  constructor(private characterService: CharacterService) { }
+  constructor(
+    private characterService: CharacterService,
+    private messageService: MessageService
+  ) { }
 
   getCharacters(): void {
     this.characterService.getCharacters()
     .subscribe(characters => this.characters = characters);
   }
 
-  // onSelect(character: Character):void {
-  //   this.characterSelected = character;
-  // }
+  clearErrors(): void {
+    this.messageService.clear()
+  }
 
   ngOnInit() {
     this.getCharacters();

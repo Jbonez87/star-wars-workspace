@@ -2,7 +2,7 @@
 
 <ul>
   <li *ngFor="let c of characters" class="character">
-     <a routerLink="/detail/{{c.name}}">
+     <a routerLink="/detail/{{c.name}}" (click)="clearErrors()">
         {{c.name}}
      </a>
   </li>
